@@ -1,0 +1,435 @@
+###############################################################################
+#
+# IAR ELF Linker V7.20.5.7591/W32 for ARM                 30/Sep/2015  11:35:37
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Exe\bootmgr.out
+#    Map file     =  
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\List\bootmgr.map
+#    Command line =  
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Obj\main.o
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Obj\startup_ewarm.o
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Obj\udma_if.o
+#        -o
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Exe\bootmgr.out
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
+#        --config_def CC3200_ES_1_2_1=0 --map
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\List\bootmgr.map
+#        --config
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\bootmgr.icf
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\..\..\..\simplelink\ewarm\NON_OS\Exe\simplelink_opt.a
+#        D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\..\..\..\driverlib\ewarm\Release\Exe\driverlib.a
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x20000000-0x20004000] { ro section .intvec };
+"P1":  place in [from 0x20000000 to 0x20004000] { ro };
+"P2":  place in [from 0x20000000 to 0x20004000] { rw, block HEAP };
+
+  Section          Kind        Address    Size  Object
+  -------          ----        -------    ----  ------
+"A1":                                    0x308
+  .intvec          const    0x20000000   0x308  startup_ewarm.o [1]
+                          - 0x20000308   0x308
+
+"P1":                                   0x2e3e
+  .text            ro code  0x20000308   0xe14  driver.o [6]
+  .text            ro code  0x2000111c    0xa4  nonos.o [6]
+  .text            ro code  0x200011c0   0x546  cc_pal.o [6]
+  .text            ro code  0x20001706    0x22  zero_init3.o [5]
+  .text            ro code  0x20001728    0x76  ABImemcpy_unaligned.o [5]
+  .text            ro code  0x200017a0    0x66  ABImemset.o [5]
+  .text            ro code  0x20001808   0x220  spi.o [4]
+  .text            ro code  0x20001a28   0x2e4  prcm.o [4]
+  .text            ro code  0x20001d0c    0x3a  ABImemset48.o [5]
+  .text            ro code  0x20001d48   0x1e8  interrupt.o [4]
+  .text            ro code  0x20001f30     0x6  utils.o [4]
+  .text            ro code  0x20001f38   0x1b8  udma.o [4]
+  .text            ro code  0x200020f0    0x10  cpu.o [4]
+  .text            ro code  0x20002100   0x34c  main.o [1]
+  .text            ro code  0x2000244c   0x2e0  fs.o [6]
+  .text            ro code  0x2000272c   0x1f4  device.o [6]
+  .text            ro code  0x20002920    0x90  uart.o [4]
+  .text            ro code  0x200029b0    0x9e  pin.o [4]
+  .text            ro code  0x20002a50    0x58  udma_if.o [1]
+  .text            ro code  0x20002aa8     0x6  ABImemclr4.o [5]
+  .text            ro code  0x20002ab0   0x238  netapp.o [6]
+  .rodata          const    0x20002ce8   0x100  pin.o [4]
+  .text            ro code  0x20002de8    0xd8  socket.o [6]
+  .rodata          const    0x20002ec0    0xd4  interrupt.o [4]
+  .rodata          const    0x20002f94    0xa8  prcm.o [4]
+  .text            ro code  0x2000303c    0x28  data_init.o [5]
+  .rodata          const    0x20003064    0x24  spi.o [4]
+  .iar.init_table  const    0x20003088    0x10  - Linker created -
+  .text            ro code  0x20003098    0x1a  cmain.o [5]
+  .text            ro code  0x200030b2     0x4  low_level_init.o [3]
+  .text            ro code  0x200030b6     0x4  exit.o [3]
+  .text            ro code  0x200030bc     0xa  cexit.o [5]
+  .text            ro code  0x200030c8     0xc  XXexit.o [5]
+  .rodata          const    0x200030d4    0x18  interrupt.o [4]
+  .rodata          const    0x200030ec    0x18  interrupt.o [4]
+  .rodata          const    0x20003104    0x18  interrupt.o [4]
+  .rodata          const    0x2000311c    0x18  spi.o [4]
+  .text            ro code  0x20003134     0xc  cstartup_M.o [5]
+  .text            ro code  0x20003140     0x6  startup_ewarm.o [1]
+  .rodata          const    0x20003146     0x0  zero_init3.o [5]
+                          - 0x20003146  0x2e3e
+
+"P2":                                    0x8b8
+  .bss             zero     0x20003148   0x170  driver.o [6]
+  .bss             zero     0x200032b8    0x58  cc_pal.o [6]
+  .bss             zero     0x20003310    0x38  main.o [1]
+  .bss             zero     0x20003348    0x28  nonos.o [6]
+  .bss             zero     0x20003370     0x4  driver.o [6]
+  .bss             zero     0x20003400   0x200  udma_if.o [1]
+  .noinit          uninit   0x20003600   0x400  startup_ewarm.o [1]
+                          - 0x20003a00   0x8b8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4b8:
+          0x20003148  0x4b8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Obj: [1]
+    main.o                     844                56
+    startup_ewarm.o              6      776    1 024
+    udma_if.o                   88               512
+    ------------------------------------------------
+    Total:                     938      776    1 592
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                       4
+    low_level_init.o             4
+    ------------------------------------------------
+    Total:                       8
+
+driverlib.a: [4]
+    cpu.o                       16
+    interrupt.o                488      284
+    pin.o                      158      256
+    prcm.o                     740      168
+    spi.o                      544       60
+    uart.o                     144
+    udma.o                     440
+    utils.o                      6
+    ------------------------------------------------
+    Total:                   2 536      768
+
+rt7M_tl.a: [5]
+    ABImemclr4.o                 6
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    ABImemset48.o               58
+    XXexit.o                    12
+    cexit.o                     10
+    cmain.o                     26
+    cstartup_M.o                12
+    data_init.o                 40
+    zero_init3.o                34
+    ------------------------------------------------
+    Total:                     418
+
+simplelink_opt.a: [6]
+    cc_pal.o                 1 350                88
+    device.o                   500
+    driver.o                 3 604               372
+    fs.o                       736
+    netapp.o                   568
+    nonos.o                    164                40
+    socket.o                   216
+    ------------------------------------------------
+    Total:                   7 138               500
+
+    Gaps                        16               140
+    Linker created                       16
+----------------------------------------------------
+    Grand Total:            11 054    1 560    2 232
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x20003099         Code  Gb  cmain.o [5]
+BootInfoWrite           0x20002187   0x3c  Code  Lc  main.o [1]
+CPUcpsie                0x200020f1   0x10  Code  Gb  cpu.o [4]
+CopyPingResultsToReport
+                        0x20002b57   0x1a  Code  Gb  netapp.o [6]
+DmaErrorIntHandler      0x20002a55    0x2  Code  Gb  udma_if.o [1]
+DmaSpiSwIntHandler      0x20001245   0x20  Code  Gb  cc_pal.o [6]
+DmaSwIntHandler         0x20002a51    0x4  Code  Gb  udma_if.o [1]
+ImageLoader             0x200021c3   0x94  Code  Lc  main.o [1]
+IntDefaultHandler       0x20003145    0x2  Code  Lc  startup_ewarm.o [1]
+IntDefaultHandler       0x20001d49    0x2  Code  Lc  interrupt.o [4]
+IntDisable              0x20001e39   0x8e  Code  Gb  interrupt.o [4]
+IntEnable               0x20001da9   0x8e  Code  Gb  interrupt.o [4]
+IntMasterEnable         0x20001d4b    0xa  Code  Gb  interrupt.o [4]
+IntPendClear            0x20001ec9   0x42  Code  Gb  interrupt.o [4]
+IntPrioritySet          0x20001d71   0x36  Code  Gb  interrupt.o [4]
+IntRegister             0x20001d5b    0xa  Code  Gb  interrupt.o [4]
+IntUnregister           0x20001d65    0xc  Code  Gb  interrupt.o [4]
+IntVTableBaseSet        0x20001d55    0x6  Code  Gb  interrupt.o [4]
+LoadAndExecute          0x20002117   0x6a  Code  Gb  main.o [1]
+NwpMaskInterrupt        0x200015b3    0x8  Code  Gb  cc_pal.o [6]
+NwpPowerOff             0x20001629   0x2c  Code  Gb  cc_pal.o [6]
+NwpPowerOn              0x2000160b   0x1e  Code  Gb  cc_pal.o [6]
+NwpPowerOnPreamble      0x200015c3   0x48  Code  Gb  cc_pal.o [6]
+NwpRegisterInterruptHandler
+                        0x2000157b   0x38  Code  Gb  cc_pal.o [6]
+NwpUnMaskInterrupt      0x200015bb    0x8  Code  Gb  cc_pal.o [6]
+OpcodeTranslateTable    0x200010c0   0x3c  Data  Gb  driver.o [6]
+PRCMCC3200MCUInit       0x20001b95   0xfe  Code  Gb  prcm.o [4]
+PRCMHIBRegRead          0x20001c93   0x10  Code  Gb  prcm.o [4]
+PRCMHIBRegWrite         0x20001ca3    0xe  Code  Gb  prcm.o [4]
+PRCMPeripheralClkDisable
+                        0x20001a7b   0x22  Code  Gb  prcm.o [4]
+PRCMPeripheralClkEnable
+                        0x20001a49   0x32  Code  Gb  prcm.o [4]
+PRCMPeripheralClockGet  0x20001a9d   0x74  Code  Gb  prcm.o [4]
+PRCMPeripheralReset     0x20001b11   0x64  Code  Gb  prcm.o [4]
+PRCMPeripheralStatusGet
+                        0x20001b75   0x20  Code  Gb  prcm.o [4]
+PRCMSysResetCauseGet    0x20001a29   0x20  Code  Gb  prcm.o [4]
+PRCM_PeriphRegsList     0x20002f94   0xa8  Data  Lc  prcm.o [4]
+PinConfigSet            0x200029d1   0x5a  Code  Gb  pin.o [4]
+PinModeSet              0x200029b1   0x20  Code  Gb  pin.o [4]
+PinTypeUART             0x20002a39   0x16  Code  Gb  pin.o [4]
+Region$$Table$$Base     0x20003088          --   Gb  - Linker created -
+Region$$Table$$Limit    0x20003098          --   Gb  - Linker created -
+ResetISR                0x20003141    0x4  Code  Gb  startup_ewarm.o [1]
+Run                     0x20002109    0xe  Code  Gb  main.o [1]
+RxIrqCnt                0x20003148    0x1  Data  Gb  driver.o [6]
+RxMsgClassLUT           0x200010fc   0x20  Data  Gb  driver.o [6]
+SPICSDisable            0x20001a17   0x12  Code  Gb  spi.o [4]
+SPICSEnable             0x20001a05   0x12  Code  Gb  spi.o [4]
+SPIConfigSetExpClk      0x200018b7   0x60  Code  Gb  spi.o [4]
+SPIDisable              0x20001869   0x12  Code  Gb  spi.o [4]
+SPIDmaDisable           0x2000188b   0x10  Code  Gb  spi.o [4]
+SPIDmaEnable            0x2000187b   0x10  Code  Gb  spi.o [4]
+SPIDmaMaskGet           0x20001833   0x24  Code  Lc  spi.o [4]
+SPIEnable               0x20001857   0x12  Code  Gb  spi.o [4]
+SPIFIFODisable          0x20001927   0x12  Code  Gb  spi.o [4]
+SPIFIFOEnable           0x20001917   0x10  Code  Gb  spi.o [4]
+SPIFIFOLevelSet         0x20001939   0x1c  Code  Gb  spi.o [4]
+SPIIntClear             0x200019b5   0x30  Code  Gb  spi.o [4]
+SPIIntEnable            0x2000197d   0x38  Code  Gb  spi.o [4]
+SPIIntNumberGet         0x20001809   0x2a  Code  Lc  spi.o [4]
+SPIIntUnregister        0x20001967   0x16  Code  Gb  spi.o [4]
+SPIReset                0x2000189b   0x1c  Code  Gb  spi.o [4]
+SPIWordCountSet         0x20001955   0x12  Code  Gb  spi.o [4]
+SetupDMAReceive         0x20001265   0x6e  Code  Lc  cc_pal.o [6]
+SetupDMASend            0x200012d3   0x66  Code  Lc  cc_pal.o [6]
+SimpleLinkHttpServerCallback
+                        0x20002103    0x2  Code  Gb  main.o [1]
+SimpleLinkNetAppEventHandler
+                        0x20002105    0x2  Code  Gb  main.o [1]
+SimpleLinkSockEventHandler
+                        0x20002107    0x2  Code  Gb  main.o [1]
+SimpleLinkWlanEventHandler
+                        0x20002101    0x2  Code  Gb  main.o [1]
+StartResponseLUT        0x20002914    0x8  Data  Gb  device.o [6]
+UARTCharPut             0x200029a5    0xc  Code  Gb  uart.o [4]
+UARTConfigSetExpClk     0x20002921   0x52  Code  Gb  uart.o [4]
+UARTDisable             0x20002987   0x18  Code  Gb  uart.o [4]
+UARTEnable              0x20002973   0x14  Code  Gb  uart.o [4]
+UDMAInit                0x20002a63   0x3a  Code  Gb  udma_if.o [1]
+UtilsDelay              0x20001f31    0x6  Code  Gb  utils.o [4]
+_SlActionLookupTable    0x20001088   0x38  Data  Gb  driver.o [6]
+_SlAsyncEventGenericHandler
+                        0x200009f3   0x5e  Code  Gb  driver.o [6]
+_SlDrvClassifyRxMsg     0x20000b45   0x78  Code  Gb  driver.o [6]
+_SlDrvCmdOp             0x200004f3   0x5c  Code  Gb  driver.o [6]
+_SlDrvCmdSend           0x20000d15   0x4e  Code  Gb  driver.o [6]
+_SlDrvDeviceEventHandler
+                        0x20002901   0x10  Code  Gb  device.o [6]
+_SlDrvDriverCBDeinit    0x2000041d   0x9c  Code  Gb  driver.o [6]
+_SlDrvDriverCBInit      0x20000339   0xe4  Code  Gb  driver.o [6]
+_SlDrvMemZero           0x20001071    0x6  Code  Gb  driver.o [6]
+_SlDrvMsgRead           0x20000667  0x38c  Code  Gb  driver.o [6]
+_SlDrvMsgReadCmdCtx     0x20000a51   0x8c  Code  Gb  driver.o [6]
+_SlDrvMsgReadSpawnCtx   0x20000add   0x68  Code  Gb  driver.o [6]
+_SlDrvMsgWrite          0x2000054f  0x118  Code  Gb  driver.o [6]
+_SlDrvNetAppEventHandler
+                        0x20002c25   0xbe  Code  Gb  netapp.o [6]
+_SlDrvObjLockWaitForever
+                        0x20001003   0x14  Code  Gb  driver.o [6]
+_SlDrvObjUnLock         0x20001031   0x10  Code  Gb  driver.o [6]
+_SlDrvProtectAsyncRespSetting
+                        0x20000309   0x30  Code  Gb  driver.o [6]
+_SlDrvProtectionObjLockWaitForever
+                        0x20001017   0x1a  Code  Gb  driver.o [6]
+_SlDrvProtectionObjUnLock
+                        0x20001041   0x16  Code  Gb  driver.o [6]
+_SlDrvReleasePoolObj    0x20000e35   0xd6  Code  Gb  driver.o [6]
+_SlDrvRxHdrRead         0x20000bbd  0x158  Code  Gb  driver.o [6]
+_SlDrvRxIrqHandler      0x200004b9   0x3a  Code  Gb  driver.o [6]
+_SlDrvSyncObjSignal     0x20000ff3   0x10  Code  Gb  driver.o [6]
+_SlDrvSyncObjWaitForever
+                        0x20000fdf   0x14  Code  Gb  driver.o [6]
+_SlDrvWaitForPoolObj    0x20000d63   0xca  Code  Gb  driver.o [6]
+_SlFindAndSetActiveObj  0x20000f4d   0x92  Code  Gb  driver.o [6]
+_SlFsCloseCmdCtrl       0x2000271c    0x4  Data  Gb  fs.o [6]
+_SlFsGetInfoCmdCtrl     0x20002728    0x4  Data  Gb  fs.o [6]
+_SlFsOpenCmdCtrl        0x20002718    0x4  Data  Gb  fs.o [6]
+_SlFsReadCmdCtrl        0x20002720    0x4  Data  Gb  fs.o [6]
+_SlFsWriteCmdCtrl       0x20002724    0x4  Data  Gb  fs.o [6]
+_SlNetAppSendTokenValueCmdCtrl
+                        0x20002ce4    0x4  Data  Gb  netapp.o [6]
+_SlNonOsMainLoopTask    0x2000117b   0x3a  Code  Gb  nonos.o [6]
+_SlNonOsSemGet          0x20001123   0x32  Code  Gb  nonos.o [6]
+_SlNonOsSemSet          0x2000111d    0x6  Code  Gb  nonos.o [6]
+_SlNonOsSpawn           0x20001155   0x26  Code  Gb  nonos.o [6]
+_SlRemoveFromList       0x20000f0b   0x42  Code  Gb  driver.o [6]
+_SlStopCmdCtrl          0x2000291c    0x4  Data  Gb  device.o [6]
+__aeabi_memclr4         0x20002aa9         Code  Gb  ABImemclr4.o [5]
+__aeabi_memset          0x200017a1         Code  Gb  ABImemset.o [5]
+__aeabi_memset4         0x20001d0d         Code  Gb  ABImemset48.o [5]
+__aeabi_memset8         0x20001d0d         Code  Gb  ABImemset48.o [5]
+__as_entries_start      0xffffffff          --   Gb  command line/config [2]
+__as_table_start        0xffffffff          --   Gb  command line/config [2]
+__cmain                 0x20003099         Code  Gb  cmain.o [5]
+__exit                  0x200030c9         Code  Gb  XXexit.o [5]
+__iar_Memset            0x200017a1         Code  Gb  ABImemset.o [5]
+__iar_Memset4_word      0x20001d15         Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x20001d15         Code  Gb  ABImemset48.o [5]
+__iar_Memset_word       0x200017a9         Code  Gb  ABImemset.o [5]
+__iar_data_init3        0x2000303d   0x28  Code  Gb  data_init.o [5]
+__iar_program_start     0x20003135         Code  Gb  cstartup_M.o [5]
+__iar_unaligned___aeabi_memcpy
+                        0x20001729         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy4
+                        0x20001749         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                        0x20001749         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_zero_init3        0x20001707   0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x200030b3    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x20000000  0x308  Data  Gb  startup_ewarm.o [1]
+_call_main              0x200030a5         Code  Gb  cmain.o [5]
+_exit                   0x200030bd         Code  Gb  cexit.o [5]
+_main                   0x200030af         Code  Gb  cmain.o [5]
+_sl_GetCreateFsMode     0x20002465   0x52  Code  Gb  fs.o [6]
+_sl_GetStartResponseConvert
+                        0x2000272d    0xc  Code  Gb  device.o [6]
+_sl_HandleAsync_Accept  0x20002e3b   0x46  Code  Gb  socket.o [6]
+_sl_HandleAsync_Connect
+                        0x20002de9   0x52  Code  Gb  socket.o [6]
+_sl_HandleAsync_DnsGetHostByName
+                        0x20002b0d   0x4a  Code  Gb  netapp.o [6]
+_sl_HandleAsync_DnsGetHostByService
+                        0x20002ab1   0x5c  Code  Gb  netapp.o [6]
+_sl_HandleAsync_InitComplete
+                        0x200027bf   0x5e  Code  Gb  device.o [6]
+_sl_HandleAsync_PingResponse
+                        0x20002b71   0x58  Code  Gb  netapp.o [6]
+_sl_HandleAsync_Select  0x20002e81   0x3a  Code  Gb  socket.o [6]
+_sl_HandleAsync_Stop    0x2000281d   0x3a  Code  Gb  device.o [6]
+_sl_NetAppSendTokenValue
+                        0x20002bc9   0x54  Code  Gb  netapp.o [6]
+_sl_Strlen              0x2000244d   0x18  Code  Gb  fs.o [6]
+cc_SetupTransfer        0x200016cb   0x3c  Code  Lc  cc_pal.o [6]
+cc_UDMAChannelSelect    0x200016ad   0x1e  Code  Lc  cc_pal.o [6]
+exit                    0x200030b7    0x4  Code  Gb  exit.o [3]
+gFirstCmdMode           0x20003149    0x1  Data  Gb  driver.o [6]
+g_H2NCnysPattern        0x20001080    0x8  Data  Gb  driver.o [6]
+g_H2NSyncPattern        0x20001078    0x8  Data  Gb  driver.o [6]
+g_SpiFd                 0x200032bc    0x4  Data  Gb  cc_pal.o [6]
+g_StatMem               0x20003150  0x168  Data  Gb  driver.o [6]
+g__SlNonOsCB            0x20003348   0x28  Data  Gb  nonos.o [6]
+g_cDummy                0x200032b9    0x1  Data  Gb  cc_pal.o [6]
+g_pCB                   0x2000314c    0x4  Data  Gb  driver.o [6]
+g_ppulSPIIntMap         0x20003064   0x24  Data  Lc  spi.o [4]
+g_pulDisRegs            0x200030ec   0x18  Data  Lc  interrupt.o [4]
+g_pulEnRegs             0x200030d4   0x18  Data  Lc  interrupt.o [4]
+g_pulRegs               0x20002ec0   0xd4  Data  Lc  interrupt.o [4]
+g_pulUnpendRegs         0x20003104   0x18  Data  Lc  interrupt.o [4]
+g_ucDMAEnabled          0x200032b8    0x1  Data  Gb  cc_pal.o [6]
+g_ucDinDout             0x200032c0   0x50  Data  Gb  cc_pal.o [6]
+g_ulPinToPadMap         0x20002ce8  0x100  Data  Lc  pin.o [4]
+g_ulSPIDmaMaskMap       0x2000311c   0x18  Data  Lc  spi.o [4]
+gpCtlTbl                0x20003400  0x200  Data  Gb  udma_if.o [1]
+iRetVal                 0x20003330    0x4  Data  Lc  main.o [1]
+lFileHandle             0x2000332c    0x4  Data  Lc  main.o [1]
+main                    0x20002257  0x16a  Code  Gb  main.o [1]
+pFsFileInfo             0x20003310   0x1c  Data  Lc  main.o [1]
+pPingCallBackFunc       0x20003370    0x4  Data  Gb  driver.o [6]
+pulStack                0x20003600  0x400  Data  Lc  startup_ewarm.o [1]
+sl_FsClose              0x2000250f   0x6c  Code  Gb  fs.o [6]
+sl_FsGetInfo            0x200026a7   0x5e  Code  Gb  fs.o [6]
+sl_FsOpen               0x200024b7   0x58  Code  Gb  fs.o [6]
+sl_FsRead               0x2000257b   0x98  Code  Gb  fs.o [6]
+sl_FsWrite              0x20002613   0x94  Code  Gb  fs.o [6]
+sl_Start                0x20002739   0x86  Code  Gb  device.o [6]
+sl_Stop                 0x20002857   0x9a  Code  Gb  device.o [6]
+spi_Close               0x2000142f   0x62  Code  Gb  cc_pal.o [6]
+spi_Open                0x20001339   0xf6  Code  Gb  cc_pal.o [6]
+spi_Read                0x20001491   0x92  Code  Gb  cc_pal.o [6]
+spi_Read_CPU            0x200011c1   0x44  Code  Lc  cc_pal.o [6]
+spi_Write               0x20001523   0x58  Code  Gb  cc_pal.o [6]
+spi_Write_CPU           0x20001205   0x40  Code  Lc  cc_pal.o [6]
+uDMAChannelAssign       0x20002085   0x2e  Code  Gb  udma.o [4]
+uDMAChannelAttributeDisable
+                        0x20001f8f   0x38  Code  Gb  udma.o [4]
+uDMAChannelAttributeEnable
+                        0x20001f57   0x38  Code  Gb  udma.o [4]
+uDMAChannelControlSet   0x20001fc7   0x20  Code  Gb  udma.o [4]
+uDMAChannelEnable       0x20001f41   0x10  Code  Gb  udma.o [4]
+uDMAChannelTransferSet  0x20001fe7   0x80  Code  Gb  udma.o [4]
+uDMAControlBaseSet      0x20001f51    0x6  Code  Gb  udma.o [4]
+uDMAEnable              0x20001f39    0x8  Code  Gb  udma.o [4]
+uDMAIntClear            0x2000207f    0x6  Code  Gb  udma.o [4]
+uDMAIntRegister         0x20002067   0x12  Code  Gb  udma.o [4]
+uDMAIntStatus           0x20002079    0x6  Code  Gb  udma.o [4]
+ulBootInfoCreateFlag    0x20003344    0x4  Data  Lc  main.o [1]
+ulBootInfoToken         0x20003340    0x4  Data  Lc  main.o [1]
+ulFactoryImgToken       0x20003334    0x4  Data  Lc  main.o [1]
+ulUserImg1Token         0x20003338    0x4  Data  Lc  main.o [1]
+ulUserImg2Token         0x2000333c    0x4  Data  Lc  main.o [1]
+
+
+[1] = D:\XPG\doc\艾电\Ti-CC3200\SimpleLink-CC3200-CC3200_Gizwits_20150523_br\example\application_bootloader\ewarm\Release\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = rt7M_tl.a
+[6] = simplelink_opt.a
+
+  11 054 bytes of readonly  code memory
+   1 560 bytes of readonly  data memory
+   2 232 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
